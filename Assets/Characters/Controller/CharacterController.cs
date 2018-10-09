@@ -34,6 +34,7 @@ public class CharacterController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        rb.freezeRotation = true;
         // Find a PlayerIndex, for a single player game
         // Will find the first controller that is connected ans use it
         if (!playerIndexSet || !prevState.IsConnected)

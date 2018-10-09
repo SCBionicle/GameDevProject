@@ -120,8 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerID: 0
   IsPlayerPlaying: 1
-  runSpeed: 3
-  jumpForce: 5
+  runSpeed: 0.5
+  jumpForce: 1
   isDead: 0
 --- !u!212 &212430923990098526
 SpriteRenderer:
