@@ -29,6 +29,7 @@ public class CharacterController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
 	}
 	
 	// Update is called once per frame
