@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212430923990098526}
   - component: {fileID: 95894037157304714}
   - component: {fileID: 61501846033684210}
+  - component: {fileID: 114678347375924700}
+  - component: {fileID: 50685059433628984}
   m_Layer: 0
   m_Name: Jeff
   m_TagString: Player
@@ -42,6 +44,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50685059433628984
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520857695721978}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61501846033684210
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -85,6 +107,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114678347375924700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520857695721978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3efa7d87979069469d6c83863d0aa0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerID: 0
+  IsPlayerPlaying: 1
+  runSpeed: 3
+  jumpForce: 5
+  isDead: 0
 --- !u!212 &212430923990098526
 SpriteRenderer:
   m_ObjectHideFlags: 1

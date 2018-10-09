@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95590167575330044}
   - component: {fileID: 50953962523807978}
   - component: {fileID: 61901367439521058}
+  - component: {fileID: 114680558808363268}
   m_Layer: 0
   m_Name: Bob
   m_TagString: Player
@@ -106,6 +107,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114680558808363268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383281481366240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3efa7d87979069469d6c83863d0aa0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerID: 1
+  IsPlayerPlaying: 1
+  runSpeed: 3
+  jumpForce: 5
+  isDead: 0
 --- !u!212 &212160288360821328
 SpriteRenderer:
   m_ObjectHideFlags: 1
