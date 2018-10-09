@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using XInputDotNetPure;
 
-public class CharacterController : MonoBehaviour {
+public class MovementController : MonoBehaviour {
 
     /**
      * Player index ID, don't change after the object has started. From 0-3 (0=player 1, 3=player 4)
      */
-    public int PlayerID;
+    public int PlayerID=-1;
     bool playerIndexSet = false;
     public bool IsPlayerPlaying;
     PlayerIndex playerIndex;
@@ -30,6 +30,10 @@ public class CharacterController : MonoBehaviour {
     void Start () {
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
+        if (PlayerID == -1)
+        {
+            Debug.LogAssertion("ERROR: did you forget to assign a character a player (controller) ID?");
+        }
 	}
 	
 	// Update is called once per frame
