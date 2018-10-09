@@ -39,12 +39,12 @@ public class CharacterController : MonoBehaviour {
         {
             for (int i = 0; i < 4; ++i)
             {
-                //PlayerIndex testPlayerIndex = (PlayerIndex)i;
-                GamePadState testState = GamePad.GetState(playerIndex);
+                PlayerIndex testPlayerIndex = (PlayerIndex)PlayerID;
+                GamePadState testState = GamePad.GetState(testPlayerIndex);
                 if (testState.IsConnected)
                 {
                     //Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
-                    //playerIndex = testPlayerIndex;
+                    playerIndex = testPlayerIndex;
                     playerIndexSet = true;
                 }
             }
@@ -53,15 +53,16 @@ public class CharacterController : MonoBehaviour {
         prevState = state;
         state = GamePad.GetState(playerIndex);
 
+
         // Detect if left button was pressed this frame
-        if (prevState.DPad.Left == ButtonState.Released && prevState.DPad.Left == ButtonState.Pressed)
+        if (prevState.DPad.Left == ButtonState.Released && state.DPad.Left == ButtonState.Pressed)
         {
             Debug.Log("Left pressed");
             leftPressed = true;
             //GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
         }
         // Detect if left button was released this frame
-        if (prevState.DPad.Left == ButtonState.Pressed && prevState.DPad.Left == ButtonState.Released)
+        if (prevState.DPad.Left == ButtonState.Pressed && state.DPad.Left == ButtonState.Released)
         {
             leftPressed = false;
             Debug.Log("Left released");
@@ -69,14 +70,14 @@ public class CharacterController : MonoBehaviour {
         }
 
         // Detect if left button was pressed this frame
-        if (prevState.DPad.Right == ButtonState.Released && prevState.DPad.Right == ButtonState.Pressed)
+        if (prevState.DPad.Right == ButtonState.Released && state.DPad.Right == ButtonState.Pressed)
         {
             Debug.Log("Right pressed");
             rightPressed = true;
             //GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
         }
         // Detect if left button was released this frame
-        if (prevState.DPad.Right == ButtonState.Pressed && prevState.DPad.Right == ButtonState.Released)
+        if (prevState.DPad.Right == ButtonState.Pressed && state.DPad.Right == ButtonState.Released)
         {
             Debug.Log("Right released");
             rightPressed = false;
@@ -86,13 +87,16 @@ public class CharacterController : MonoBehaviour {
 
         //////////////////////////Left and right movement
         //left:
-        if (leftPressed)
+        if (!isDead)
         {
-            rb.AddForce(Vector2.left * runSpeed, ForceMode2D.Impulse);
-        }
-        if (rightPressed)
-        {
-            rb.AddForce(Vector2.right * runSpeed, ForceMode2D.Impulse);
+            if (leftPressed)
+            {
+                rb.AddForce(Vector2.left * runSpeed, ForceMode2D.Impulse);
+            }
+            if (rightPressed)
+            {
+                rb.AddForce(Vector2.right * runSpeed, ForceMode2D.Impulse);
+            }
         }
     }
 }
